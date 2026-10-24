@@ -41,11 +41,20 @@ jobs:
           SUBPAGES = {'faq', 'menu', 'privacy', 'terms'}
           BAD_COMPONENTS = {'node_modules', 'private', 'credentials', 'secrets', 'src', 'source', 'qa', 'leads', '__pycache__'}
           APPROVED_MP4 = {
+           '7c15b8aaac6a299db4c536a5881d4c0a3a93fa6f21633abd2dca507112e24345',
+           '7cc6598e5c43c74443264fbde8a524c8c62760f3ce45e91460fce7a9526f8546',
+           'c3b838769cc93dc8f2f57f57bfe7e898985f3c9e722a3241b11ae804afde1ddc',
+           '26a8e7e00bec5499f17b38ba50dd88ace06e7f5bb0b0b238a79758da368437e0',
+           '0acf5959ba6219f3e9c8782db180fc831837f8a0dbe0c202341a670b26c71582',
+           '017ebb76ae5a4dfbf932cfb864553bc8c74cbea4f91f2b0f830511f5a17df015',
+          
            'c8d48e1e03b9b812ab9e3faaccdcb9c3cb4b4ae8129d17d3f2dfa83b0b8d53d7',
            '5638aef456dee6808d134d167900bdc0f4b5cb531e9a28713be3815756345a37',
            'f514d51c243cbee88eff16422c48a7484a3a08ac3a3f5033c9f7a59f1d91f605',
           }
           MAX_MP4_BYTES = 2_000_000
+          # Exact current live enhanced dye asset; no generic size-cap expansion.
+          APPROVED_MP4_SIZE_EXCEPTIONS = {'c3b838769cc93dc8f2f57f57bfe7e898985f3c9e722a3241b11ae804afde1ddc': 6_000_000}
           MAX_TOTAL_BYTES = 900_000_000
           MAX_FILE_BYTES = 10_000_000
           MAX_FILES = 30000
@@ -175,7 +184,7 @@ jobs:
                           if size!=record['size'] or h.hexdigest()!=record['sha256']:
                               raise ValueError('Static content integrity mismatch')
                           if info.filename.lower().endswith('.mp4'):
-                              if record['sha256'] not in APPROVED_MP4 or Path(info.filename).stem != record['sha256'] or size > MAX_MP4_BYTES:
+                              if record['sha256'] not in APPROVED_MP4 or Path(info.filename).stem != record['sha256'] or size > APPROVED_MP4_SIZE_EXCEPTIONS.get(record['sha256'], MAX_MP4_BYTES):
                                   raise ValueError('Unapproved or oversized MP4')
                               with archive.open(info) as stream:
                                   header = stream.read(32)
