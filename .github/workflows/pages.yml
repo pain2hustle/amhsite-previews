@@ -35,11 +35,17 @@ jobs:
           import re
           from pathlib import PurePosixPath
           
-          EXTENSIONS = {'.html', '.css', '.js', '.svg', '.png', '.jpg', '.jpeg', '.webp', '.ico', '.ttf', '.woff', '.woff2', '.webmanifest'}
+          EXTENSIONS = {'.html', '.css', '.js', '.svg', '.png', '.jpg', '.jpeg', '.webp', '.ico', '.ttf', '.woff', '.woff2', '.webmanifest', '.mp4'}
           ROOT_FILES = {'index.html', '404.html', 'robots.txt', '.nojekyll'}
           SITE_FILES = {'index.html', '404.html', 'favicon.ico', 'robots.txt', 'site.webmanifest', 'sw.js'}
           SUBPAGES = {'faq', 'menu', 'privacy', 'terms'}
           BAD_COMPONENTS = {'node_modules', 'private', 'credentials', 'secrets', 'src', 'source', 'qa', 'leads', '__pycache__'}
+          APPROVED_MP4 = {
+           'c8d48e1e03b9b812ab9e3faaccdcb9c3cb4b4ae8129d17d3f2dfa83b0b8d53d7',
+           '5638aef456dee6808d134d167900bdc0f4b5cb531e9a28713be3815756345a37',
+           'f514d51c243cbee88eff16422c48a7484a3a08ac3a3f5033c9f7a59f1d91f605',
+          }
+          MAX_MP4_BYTES = 2_000_000
           MAX_TOTAL_BYTES = 900_000_000
           MAX_FILE_BYTES = 10_000_000
           MAX_FILES = 30000
@@ -61,6 +67,8 @@ jobs:
                   return False
               if p.suffix.lower() not in EXTENSIONS and p.name != 'robots.txt':
                   return False
+              if p.suffix.lower() == '.mp4':
+                  return len(p.parts) == 2 and p.parts[0] == 'assets' and p.suffix == '.mp4' and p.stem in APPROVED_MP4
               if p.parts[0] == 'assets':
                   return len(p.parts) == 2 and bool(re.fullmatch(r'[0-9a-f]{40,64}\.[a-z0-9]+', p.name)) and p.suffix.lower() in EXTENSIONS
               if len(p.parts) < 3 or p.parts[0] not in {'barbers', 'restaurants'}:
@@ -166,6 +174,13 @@ jobs:
                                   h.update(chunk)
                           if size!=record['size'] or h.hexdigest()!=record['sha256']:
                               raise ValueError('Static content integrity mismatch')
+                          if info.filename.lower().endswith('.mp4'):
+                              if record['sha256'] not in APPROVED_MP4 or Path(info.filename).stem != record['sha256'] or size > MAX_MP4_BYTES:
+                                  raise ValueError('Unapproved or oversized MP4')
+                              with archive.open(info) as stream:
+                                  header = stream.read(32)
+                              if header[4:8] != b'ftyp' or header[8:12] != b'isom' or b'avc1' not in header:
+                                  raise ValueError('MP4 MIME/codec signature mismatch')
                           seen.add(info.filename)
                   verified.append(path)
               if seen!=set(expected):
