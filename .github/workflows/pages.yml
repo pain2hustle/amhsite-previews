@@ -1,0 +1,222 @@
+name: Publish static previews
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'packs/**'
+      - '.github/workflows/pages.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: pages
+  cancel-in-progress: false
+jobs:
+  build:
+    if: github.repository == 'pain2hustle/amhsite-previews' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+      pages: read
+    steps:
+      - name: Checkout this public repository only
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+          fetch-depth: 1
+      - name: Configure Pages
+        uses: actions/configure-pages@983d7736d9b0ae728b81ab479565c72886d7745b # v5
+      - name: Validate and extract static packs
+        shell: bash
+        run: |
+          python3 - <<'PYCODE'
+          """Restrictive policy shared by the local packer and the deployment validator."""
+          import re
+          from pathlib import PurePosixPath
+          
+          EXTENSIONS = {'.html', '.css', '.js', '.svg', '.png', '.jpg', '.jpeg', '.webp', '.ico', '.ttf', '.woff', '.woff2', '.webmanifest'}
+          ROOT_FILES = {'index.html', '404.html', 'robots.txt', '.nojekyll'}
+          SITE_FILES = {'index.html', '404.html', 'favicon.ico', 'robots.txt', 'site.webmanifest', 'sw.js'}
+          SUBPAGES = {'faq', 'menu', 'privacy', 'terms'}
+          BAD_COMPONENTS = {'node_modules', 'private', 'credentials', 'secrets', 'src', 'source', 'qa', 'leads', '__pycache__'}
+          MAX_TOTAL_BYTES = 900_000_000
+          MAX_FILE_BYTES = 10_000_000
+          MAX_FILES = 30000
+          MAX_PACK_BYTES = 25 * 1024 * 1024
+          
+          def allowed_path(name):
+              if not isinstance(name, str) or not name or len(name) > 240:
+                  return False
+              if '\\' in name or '\x00' in name or name.startswith('/') or name.endswith('/'):
+                  return False
+              p = PurePosixPath(name)
+              if p.as_posix() != name or any(x in {'', '.', '..'} for x in name.split('/')):
+                  return False
+              if name in ROOT_FILES:
+                  return True
+              if not re.fullmatch(r'[A-Za-z0-9_./-]+', name):
+                  return False
+              if any(x.startswith('.') or x.lower() in BAD_COMPONENTS for x in p.parts):
+                  return False
+              if p.suffix.lower() not in EXTENSIONS and p.name != 'robots.txt':
+                  return False
+              if p.parts[0] == 'assets':
+                  return len(p.parts) == 2 and bool(re.fullmatch(r'[0-9a-f]{40,64}\.[a-z0-9]+', p.name)) and p.suffix.lower() in EXTENSIONS
+              if len(p.parts) < 3 or p.parts[0] not in {'barbers', 'restaurants'}:
+                  return False
+              if not re.fullmatch(r'[a-z0-9][a-z0-9-]{0,119}', p.parts[1]):
+                  return False
+              tail = p.parts[2:]
+              if len(tail) == 1:
+                  return tail[0] in SITE_FILES
+              if len(tail) == 2 and tail[0] in SUBPAGES and tail[1] == 'index.html':
+                  return True
+              if tail[0] == 'assets':
+                  return len(tail) >= 2 and p.suffix.lower() in EXTENSIONS
+              return False
+          
+          """Validate the exact public pack manifest, then extract static files safely."""
+          import argparse, hashlib, json, re, shutil, stat, zipfile
+          from pathlib import Path
+          
+          
+          def strict_object(pairs):
+              result={}
+              for key,value in pairs:
+                  if key in result: raise ValueError('Duplicate JSON key')
+                  result[key]=value
+              return result
+          
+          def integer(n):
+              return type(n) is int and n >= 0
+          
+          def sha(s):
+              return isinstance(s,str) and bool(re.fullmatch(r'[0-9a-f]{64}',s))
+          
+          def digest_file(path):
+              with path.open('rb') as f:
+                  return hashlib.file_digest(f,'sha256').hexdigest()
+          
+          def extract(pack_dir, destination):
+              pack_dir=Path(pack_dir).resolve(strict=True)
+              destination=Path(destination).absolute()
+              if destination.exists() or destination.is_symlink():
+                  raise ValueError('Extraction destination must not exist')
+              mf=pack_dir/'packs.json'
+              if mf.is_symlink() or not mf.is_file() or mf.stat().st_size > 16_000_000:
+                  raise ValueError('Invalid manifest file')
+              manifest=json.loads(mf.read_text(),object_pairs_hook=strict_object)
+              if set(manifest)!={'format','file_count','total_bytes','packs','files'} or manifest['format']!=1:
+                  raise ValueError('Invalid manifest schema')
+              if not integer(manifest['file_count']) or not 0<manifest['file_count']<=MAX_FILES:
+                  raise ValueError('Invalid static file count')
+              if not integer(manifest['total_bytes']) or manifest['total_bytes']>MAX_TOTAL_BYTES:
+                  raise ValueError('Published site exceeds size policy')
+              if not isinstance(manifest['files'],list) or len(manifest['files'])!=manifest['file_count']:
+                  raise ValueError('Invalid static file list')
+              expected={}
+              for r in manifest['files']:
+                  if not isinstance(r,dict) or set(r)!={'path','sha256','size'}:
+                      raise ValueError('Invalid static record')
+                  if not allowed_path(r['path']) or r['path'] in expected:
+                      raise ValueError('Unsafe or duplicate static path')
+                  if not integer(r['size']) or r['size']>MAX_FILE_BYTES or not sha(r['sha256']):
+                      raise ValueError('Invalid static size/hash')
+                  expected[r['path']]=r
+              if sum(r['size'] for r in expected.values())!=manifest['total_bytes']:
+                  raise ValueError('Uncompressed size mismatch')
+              if not ROOT_FILES<=expected.keys():
+                  raise ValueError('Required root files missing')
+              if len([p for p in expected if p.count('/')==2 and p.endswith('/index.html')])!=270:
+                  raise ValueError('Expected exactly 270 homepages')
+              if not isinstance(manifest['packs'],list) or not 1<=len(manifest['packs'])<=20:
+                  raise ValueError('Invalid pack count')
+              pack_names=set(); verified=[]; seen=set()
+              for pack in manifest['packs']:
+                  if not isinstance(pack,dict) or set(pack)!={'name','size','sha256'}:
+                      raise ValueError('Invalid pack record')
+                  name=pack['name']
+                  if not isinstance(name,str) or not re.fullmatch(r'part-[0-9]{3}\.zip',name) or name in pack_names:
+                      raise ValueError('Invalid or duplicate pack filename')
+                  if not integer(pack['size']) or not 0<pack['size']<MAX_PACK_BYTES or not sha(pack['sha256']):
+                      raise ValueError('Invalid pack size/hash')
+                  pack_names.add(name); path=pack_dir/name
+                  if path.is_symlink() or not path.is_file() or path.stat().st_size!=pack['size']:
+                      raise ValueError('Pack absent or wrong size')
+                  if digest_file(path)!=pack['sha256']:
+                      raise ValueError('Pack integrity mismatch')
+                  with zipfile.ZipFile(path) as archive:
+                      for info in archive.infolist():
+                          mode=info.external_attr>>16
+                          if info.is_dir() or not stat.S_ISREG(mode) or info.flag_bits&1:
+                              raise ValueError('Directory, symlink, special, or encrypted entry rejected')
+                          if info.compress_type not in {zipfile.ZIP_STORED,zipfile.ZIP_DEFLATED}:
+                              raise ValueError('Unsupported archive compression')
+                          if info.filename in seen or not allowed_path(info.filename) or info.filename not in expected:
+                              raise ValueError('Duplicate, unsafe, or unexpected archive path')
+                          record=expected[info.filename]
+                          if info.file_size!=record['size'] or info.file_size>MAX_FILE_BYTES:
+                              raise ValueError('Archive entry size mismatch')
+                          with archive.open(info) as stream:
+                              h=hashlib.sha256(); size=0
+                              while chunk:=stream.read(1024*1024):
+                                  size+=len(chunk)
+                                  if size>record['size']: raise ValueError('Archive entry expansion exceeds manifest')
+                                  h.update(chunk)
+                          if size!=record['size'] or h.hexdigest()!=record['sha256']:
+                              raise ValueError('Static content integrity mismatch')
+                          seen.add(info.filename)
+                  verified.append(path)
+              if seen!=set(expected):
+                  raise ValueError('Static files missing from packs')
+              if {p.name for p in pack_dir.glob('part-*.zip')}!=pack_names:
+                  raise ValueError('Unexpected ZIP packs present')
+              # Every path, type, count, length and digest has now passed before writes begin.
+              destination.mkdir(parents=True,exist_ok=False)
+              try:
+                  for path in verified:
+                      with zipfile.ZipFile(path) as archive:
+                          for info in archive.infolist():
+                              target=destination/info.filename
+                              target.parent.mkdir(parents=True,exist_ok=True)
+                              with archive.open(info) as src, target.open('xb') as dst:
+                                  shutil.copyfileobj(src,dst,1024*1024)
+                              if digest_file(target)!=expected[info.filename]['sha256']:
+                                  raise ValueError('Post-extraction integrity mismatch')
+                  for name in ['index.html']+[p for p in expected if p.count('/')==2 and p.endswith('/index.html')]:
+                      if 'noindex' not in (destination/name).read_text().lower():
+                          raise ValueError('Preview homepage lacks noindex')
+                  if 'Disallow: /' not in (destination/'robots.txt').read_text():
+                      raise ValueError('Root robots exclusion missing')
+              except Exception:
+                  shutil.rmtree(destination)
+                  raise
+              print(f'Validated {len(expected)} static files ({manifest["total_bytes"]:,} bytes) in {len(verified)} packs.')
+          
+          if __name__=='__main__':
+              parser=argparse.ArgumentParser()
+              parser.add_argument('pack_dir',nargs='?',default='packs')
+              parser.add_argument('destination',nargs='?',default='_site')
+              args=parser.parse_args()
+              extract(args.pack_dir,args.destination)
+          PYCODE
+      - name: Upload verified static site
+        uses: actions/upload-pages-artifact@7b1f4a764d45c48632c6b24a0339c27f5614fb0b # v4
+        with:
+          path: _site
+          retention-days: 1
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy static previews
+        id: deployment
+        uses: actions/deploy-pages@d6db90164ac5ed86f2b6aed7e0febac5b3c0c03e # v4
