@@ -1,0 +1,8 @@
+{
+  "name": "amhsite",
+  "compatibility_date": "2026-10-25",
+  "assets": {
+    "directory": "./_site"
+  },
+  "previews": {}
+}
