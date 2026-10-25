@@ -41,6 +41,11 @@ jobs:
           SUBPAGES = {'faq', 'menu', 'privacy', 'terms'}
           BAD_COMPONENTS = {'node_modules', 'private', 'credentials', 'secrets', 'src', 'source', 'qa', 'leads', '__pycache__'}
           APPROVED_MP4 = {
+           'f669f1e75c7498e69cacac58bcff156cd2419e3d51e1d6108bf5c4d8d5a187eb',
+           '63c28b0b833d8b4b99d6ef1e02dfeb34d6c5acd3745d9e993c6bf84ec86ebcda',
+           '5df38d6223b0b5d6851b433ab71e27a2fb79005b4932b7bfb9850171f563b608',
+           'a96d6031e9af134fae64ec65921fdb9a832746dbf50cd4940232f6f65af6c752',
+           'f6903f735fb8a2223ab800f786572c22ca3709410c2ba8584f4b2142a74ba410',
            '7c15b8aaac6a299db4c536a5881d4c0a3a93fa6f21633abd2dca507112e24345',
            '7cc6598e5c43c74443264fbde8a524c8c62760f3ce45e91460fce7a9526f8546',
            'c3b838769cc93dc8f2f57f57bfe7e898985f3c9e722a3241b11ae804afde1ddc',
