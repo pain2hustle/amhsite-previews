@@ -6,14 +6,14 @@
       "sha256": "78eda3ccf27b841be2b5c0a14380dc705200768f60c84f305127e4f6da28f726"
     },
     {
-      "bytes": 7946727,
+      "bytes": 7945678,
       "path": "site-02.zip",
-      "sha256": "e919e7f13887b459dc85d65948e93fecb0f349f60f49556f64198bbbcd8467d0"
+      "sha256": "ab42a0da20c941e9ae63539698f1849b430eefc4d7e672bab5423c5c2d30900c"
     },
     {
-      "bytes": 925690,
+      "bytes": 1486590,
       "path": "site-03.zip",
-      "sha256": "5f6278810e3c2544afaadd2f0bb21e7da83601a81f72bd2fb67c513591e71c29"
+      "sha256": "6aa88a9614ccbf8d6206e02032c330276dbf2029d350d0d8975b72884a4d3dca"
     }
   ],
   "files": [
@@ -73,9 +73,9 @@
     },
     {
       "archive": "site-02.zip",
-      "bytes": 4719,
+      "bytes": 5999,
       "path": "assets/dons-gallery.js",
-      "sha256": "31f1321a998afaeb1425a4e817c5d3cd7b3f89a4769764e55ebdbda004fc8c1f"
+      "sha256": "45371df7ca40deb26828adf90f47899bda41d68d7b3b810b83689a74d73f124f"
     },
     {
       "archive": "site-03.zip",
@@ -94,6 +94,12 @@
       "bytes": 85,
       "path": "assets/dons-logo-presentation.js",
       "sha256": "74ebdf7d2bfb0e8353485c1dfec194daf8220e0b429983c4d2309aa2563c1dba"
+    },
+    {
+      "archive": "site-03.zip",
+      "bytes": 2143,
+      "path": "assets/dons-portrait-update.css",
+      "sha256": "bd81e8ee29bc8f208210a06495542cc1bf40952a72c25c782cdd5551a9fb3c82"
     },
     {
       "archive": "site-03.zip",
@@ -210,6 +216,12 @@
       "sha256": "7e4cbb5a0f4e84f1a0007d6d4d97a759466125589ac224223369b1315ff8d271"
     },
     {
+      "archive": "site-03.zip",
+      "bytes": 61430,
+      "path": "assets/shop/don-original.jpg",
+      "sha256": "ec60761ed6db850b8d0ccb954ce0fdfb30dc5ca295d44022fc9e242a6adbe3f2"
+    },
+    {
       "archive": "site-02.zip",
       "bytes": 12447,
       "path": "assets/shop/favicon-256.png",
@@ -220,6 +232,30 @@
       "bytes": 110527,
       "path": "assets/shop/footer.jpg",
       "sha256": "ca7ac808b8c99f8af3294399d65f146d7478a37310d543f7aa94ad5244d51d9b"
+    },
+    {
+      "archive": "site-03.zip",
+      "bytes": 85770,
+      "path": "assets/shop/gallery-03.jpg",
+      "sha256": "21364d563d7ccf78b58a232cc5ce6591264a8f2d0cc390e9f851f6dfdea4e3d8"
+    },
+    {
+      "archive": "site-03.zip",
+      "bytes": 114250,
+      "path": "assets/shop/gallery-04.jpg",
+      "sha256": "bdea18497ff588d9270f8b93a21c6c8e5836855f485018fddf75774b640347b7"
+    },
+    {
+      "archive": "site-03.zip",
+      "bytes": 126977,
+      "path": "assets/shop/gallery-05.jpg",
+      "sha256": "52c7ab551e63de3da41cb5d6697777433aff06c3732d2e4a0d74c4a3b02e1a6d"
+    },
+    {
+      "archive": "site-03.zip",
+      "bytes": 171746,
+      "path": "assets/shop/gallery-06.jpg",
+      "sha256": "bda785f40742b777371cd66910b85b4c4291a4029ed51b773a34091510953adb"
     },
     {
       "archive": "site-02.zip",
@@ -391,9 +427,9 @@
     },
     {
       "archive": "site-02.zip",
-      "bytes": 96027,
+      "bytes": 95124,
       "path": "index.html",
-      "sha256": "eebb549e20dbbd6971c8cf3d8a5731d08ebba207408a7dc33e590ecd44efe530"
+      "sha256": "40e496a0e146a8d853b38b4a02dffdaf7abea58966fd5fb5181a7616e6d10247"
     },
     {
       "archive": "site-02.zip",
