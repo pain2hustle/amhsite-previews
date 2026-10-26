@@ -6,9 +6,9 @@
       "sha256": "78eda3ccf27b841be2b5c0a14380dc705200768f60c84f305127e4f6da28f726"
     },
     {
-      "bytes": 7945678,
+      "bytes": 7945796,
       "path": "site-02.zip",
-      "sha256": "ab42a0da20c941e9ae63539698f1849b430eefc4d7e672bab5423c5c2d30900c"
+      "sha256": "4c60a323fa37ba42075b978ca65405d9b0b0b462a27bf8c884fce2e845f9d042"
     },
     {
       "bytes": 1486590,
@@ -427,9 +427,9 @@
     },
     {
       "archive": "site-02.zip",
-      "bytes": 95124,
+      "bytes": 95433,
       "path": "index.html",
-      "sha256": "40e496a0e146a8d853b38b4a02dffdaf7abea58966fd5fb5181a7616e6d10247"
+      "sha256": "4d925b21e180f2c703a9ac852af4bf5457271fd6d0bc6512a274a8c7a87c5ba4"
     },
     {
       "archive": "site-02.zip",
