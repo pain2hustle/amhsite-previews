@@ -6,17 +6,22 @@
       "sha256": "78eda3ccf27b841be2b5c0a14380dc705200768f60c84f305127e4f6da28f726"
     },
     {
-      "bytes": 7947339,
+      "bytes": 7946727,
       "path": "site-02.zip",
-      "sha256": "6b9f20c35c5fd200f64e21ee44e8800ffba6b3bd21747ac438360aa315846608"
+      "sha256": "e919e7f13887b459dc85d65948e93fecb0f349f60f49556f64198bbbcd8467d0"
+    },
+    {
+      "bytes": 925690,
+      "path": "site-03.zip",
+      "sha256": "5f6278810e3c2544afaadd2f0bb21e7da83601a81f72bd2fb67c513591e71c29"
     }
   ],
   "files": [
     {
       "archive": "site-02.zip",
-      "bytes": 3572,
+      "bytes": 3169,
       "path": "404.html",
-      "sha256": "055924addafcde9cdfd4391d368529c47a45016de694bd997b8471b49208c053"
+      "sha256": "49a811480439859fe45965ed0356470ead2836392a88575adffc049f61bbffad"
     },
     {
       "archive": "site-02.zip",
@@ -61,10 +66,22 @@
       "sha256": "ea0151fac186107b2c75728aa01bb0963f18d5c4855e54fb20c17fe848975b34"
     },
     {
+      "archive": "site-03.zip",
+      "bytes": 2320,
+      "path": "assets/dons-final-corrections.css",
+      "sha256": "c3b36bb4a161b1c6ccf5dab2857b368f653de4c7d70352f75f8af3f31849ae57"
+    },
+    {
       "archive": "site-02.zip",
       "bytes": 4719,
       "path": "assets/dons-gallery.js",
       "sha256": "31f1321a998afaeb1425a4e817c5d3cd7b3f89a4769764e55ebdbda004fc8c1f"
+    },
+    {
+      "archive": "site-03.zip",
+      "bytes": 679,
+      "path": "assets/dons-header-background.js",
+      "sha256": "ce26256972028fc9b18494ccb5eecad468c9b566d4e274e976ebcea57b4e019a"
     },
     {
       "archive": "site-02.zip",
@@ -79,6 +96,36 @@
       "sha256": "74ebdf7d2bfb0e8353485c1dfec194daf8220e0b429983c4d2309aa2563c1dba"
     },
     {
+      "archive": "site-03.zip",
+      "bytes": 241431,
+      "path": "assets/gallery-v2/energy-original.jpg",
+      "sha256": "1fc7d119ba6446d0fe08c92244e998e6f4f291fb27afdca22e5b9204ea797c34"
+    },
+    {
+      "archive": "site-03.zip",
+      "bytes": 43148,
+      "path": "assets/gallery-v2/energy-steel.png",
+      "sha256": "34a444300db31a50422f34d2e4d2ea6ff20d10d18cbdbb670464f43d533f1996"
+    },
+    {
+      "archive": "site-03.zip",
+      "bytes": 462052,
+      "path": "assets/gallery-v2/fade-original.jpg",
+      "sha256": "e86a8431012cfae9af75a7664be16fb7b1b1096738772729d2d0bc39606482c2"
+    },
+    {
+      "archive": "site-03.zip",
+      "bytes": 154119,
+      "path": "assets/gallery-v2/lineup-original.jpg",
+      "sha256": "4246b20559bd70496e77983e1605fbd37b19e8733da18aeb43716a6e5c26fe26"
+    },
+    {
+      "archive": "site-03.zip",
+      "bytes": 68860,
+      "path": "assets/gallery-v2/lineup-steel.png",
+      "sha256": "592eab9580c954eb511c026141479b6bdfa05d44684a058634aa115480a6b137"
+    },
+    {
       "archive": "site-02.zip",
       "bytes": 620479,
       "path": "assets/gallery-v2/tools-gold.png",
@@ -89,6 +136,12 @@
       "bytes": 2623054,
       "path": "assets/gallery-v2/tools-no-lettering.png",
       "sha256": "35b6973be63395ab7cb70508667ad22dca2b356e4da0216afc18a48433dd5f52"
+    },
+    {
+      "archive": "site-03.zip",
+      "bytes": 48538,
+      "path": "assets/header-shop-original.jpg",
+      "sha256": "9868b49268a19ccd0f5c90751ff2ed0b3fb5b8b9f042aa267c5eb6117584e863"
     },
     {
       "archive": "site-02.zip",
@@ -104,9 +157,9 @@
     },
     {
       "archive": "site-02.zip",
-      "bytes": 2003,
+      "bytes": 2060,
       "path": "assets/open-now.js",
-      "sha256": "c754a75c318d7b73deb02a1612dcd1ec4703d3330ed04bb00a762354361bb21f"
+      "sha256": "c614fc301305a614e71b10f216d2d04d688b4d656881862035b7565fe486ed26"
     },
     {
       "archive": "site-02.zip",
@@ -338,15 +391,15 @@
     },
     {
       "archive": "site-02.zip",
-      "bytes": 97118,
+      "bytes": 96027,
       "path": "index.html",
-      "sha256": "c0d1060ffb3dfdd58f182761c84e8e1cf652dd0d76dd2c7abb4e8f5380cb37d0"
+      "sha256": "eebb549e20dbbd6971c8cf3d8a5731d08ebba207408a7dc33e590ecd44efe530"
     },
     {
       "archive": "site-02.zip",
-      "bytes": 8495,
+      "bytes": 8156,
       "path": "owner-offer/index.html",
-      "sha256": "e867f466fcd27cb37f3c3e448ce4859052a0c233d697f4a3b10a15b886381373"
+      "sha256": "9865b361d2883a291c3e8ee5fcb0369d2a81056be57bb97907a737f377059ba1"
     },
     {
       "archive": "site-02.zip",
