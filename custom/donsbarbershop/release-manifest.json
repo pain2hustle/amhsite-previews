@@ -6,9 +6,9 @@
       "sha256": "78eda3ccf27b841be2b5c0a14380dc705200768f60c84f305127e4f6da28f726"
     },
     {
-      "bytes": 4897569,
+      "bytes": 7947339,
       "path": "site-02.zip",
-      "sha256": "54698efa962a4537b584304fa3a3d68ff1195e3a0fd93e5d1d39e779bdc18bf2"
+      "sha256": "6b9f20c35c5fd200f64e21ee44e8800ffba6b3bd21747ac438360aa315846608"
     }
   ],
   "files": [
@@ -62,9 +62,9 @@
     },
     {
       "archive": "site-02.zip",
-      "bytes": 2680,
+      "bytes": 4719,
       "path": "assets/dons-gallery.js",
-      "sha256": "e0beb3004f8f8ec63b32bbcf24c87927798c5afe0ec55ed7c62d3bbfeb62ec30"
+      "sha256": "31f1321a998afaeb1425a4e817c5d3cd7b3f89a4769764e55ebdbda004fc8c1f"
     },
     {
       "archive": "site-02.zip",
@@ -80,9 +80,21 @@
     },
     {
       "archive": "site-02.zip",
-      "bytes": 1615,
+      "bytes": 620479,
+      "path": "assets/gallery-v2/tools-gold.png",
+      "sha256": "d6372120cddd975a5b20b46c52a0e5eaa913f198d18a46e430462763b515057c"
+    },
+    {
+      "archive": "site-02.zip",
+      "bytes": 2623054,
+      "path": "assets/gallery-v2/tools-no-lettering.png",
+      "sha256": "35b6973be63395ab7cb70508667ad22dca2b356e4da0216afc18a48433dd5f52"
+    },
+    {
+      "archive": "site-02.zip",
+      "bytes": 2046,
       "path": "assets/hero-readability.css",
-      "sha256": "c72c15e778d04cf986422e287cbb36332e2fdf116e5d151e85d418fcb4295f3c"
+      "sha256": "ed962488aff546a544416f2b69caed5e1bd8a311408c69401d45c1282afe5f39"
     },
     {
       "archive": "site-02.zip",
@@ -236,9 +248,9 @@
     },
     {
       "archive": "site-02.zip",
-      "bytes": 3949,
+      "bytes": 9947,
       "path": "assets/spec-completion-v3.css",
-      "sha256": "db7ba3f9593897a2f3bbe7a156299400339f981447632b95c26bc519cfd4d977"
+      "sha256": "df9762bdce2c123b1a72ef3b8b878531149871b02dd4286a617f558e2f6887cf"
     },
     {
       "archive": "site-02.zip",
@@ -326,9 +338,9 @@
     },
     {
       "archive": "site-02.zip",
-      "bytes": 96324,
+      "bytes": 97118,
       "path": "index.html",
-      "sha256": "04829116df305cb852a42b98ae898d4c5f790e0741f6659937d571986ba3c675"
+      "sha256": "c0d1060ffb3dfdd58f182761c84e8e1cf652dd0d76dd2c7abb4e8f5380cb37d0"
     },
     {
       "archive": "site-02.zip",
