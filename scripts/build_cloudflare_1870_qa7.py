@@ -8,13 +8,13 @@ from dataclasses import dataclass
 import argparse,hashlib,importlib.util,json,os,re,stat,sys,tempfile,zipfile
 BASE_EXPORTER_SHA256='a87f189f4878decbc392f41b04a53f4d3e5144816d3084cea29ba850642aca04'
 BASE_MANIFEST_SHA256='7c7ab5e0c1b010203ab92bc641ada4005b0588c80584b886ca8b3ead5af8e1ac'
-QA_MANIFEST_SHA256='2bf01c9e9ffbdd931f55bbcb517aad0aa8b4c9e014b5b50986acad2958782ad2'
+QA_MANIFEST_SHA256='614238f911bce9ccd179b2f415c3acc4fd023dcc71c0e9b00f39fea021964eab'
 # Final exact names, sizes and SHA-256 values must be separately reviewed and frozen.
 EXACT_QA_ARCHIVE_NAMES=('qa7-001.zip', 'qa7-002.zip', 'qa7-003.zip', 'qa7-004.zip', 'qa7-005.zip')
-QA_ARCHIVE_RECORDS=(('qa7-001.zip', 7392771, 'd3dcef9543d5a599d6e1f939d81a4dfe9c2d71fb11ead26f7c91b73b46e3448e'), ('qa7-002.zip', 7396763, 'fd45495257f0cf560634c44374b3636f04f52c44e4361281479e66098d95fcc9'), ('qa7-003.zip', 7227557, '7d8d53efcb9fd288ff7231b8f776f3fd84b92c91aea574b79cc5529e69572fb4'), ('qa7-004.zip', 7319713, '391e5c95de78bc12865c334eb470980ba0d966130070b0d96bed6ab64c1dc306'), ('qa7-005.zip', 7290501, 'c7c01df528dacdf5983078602d3be605b75e5bf8423c28451dfdd654f3fab8d7'))
+QA_ARCHIVE_RECORDS=(('qa7-001.zip', 7392771, 'd3dcef9543d5a599d6e1f939d81a4dfe9c2d71fb11ead26f7c91b73b46e3448e'), ('qa7-002.zip', 7399100, 'b9558c96f6ddd165e5444587209cb9cc9e8b0cec43729c5bd0336112504c2a74'), ('qa7-003.zip', 7227557, '7d8d53efcb9fd288ff7231b8f776f3fd84b92c91aea574b79cc5529e69572fb4'), ('qa7-004.zip', 7319713, '391e5c95de78bc12865c334eb470980ba0d966130070b0d96bed6ab64c1dc306'), ('qa7-005.zip', 7290501, 'c7c01df528dacdf5983078602d3be605b75e5bf8423c28451dfdd654f3fab8d7'))
 BASE_FILE_COUNT=19150
-QA_FILE_COUNT=192
-COMBINED_FILE_COUNT=19342
+QA_FILE_COUNT=193
+COMBINED_FILE_COUNT=19343
 FILE_CAP=20000
 MAX_FILE_BYTES=10_000_000
 MAX_PACK_BYTES=8*1024*1024
@@ -22,7 +22,7 @@ MAX_QA_BYTES=50_000_000
 MAX_TOTAL_BYTES=900_000_000
 PREFIX='qa-20261025'
 ROUTES={'restaurants':frozenset(('8th-st-coffee-house','frank-joes-coffee-house-parker-square','frank-joes-coffee-house-southwest-parkway','the-duck-coffee-company')),'barbers':frozenset(('city-barbers-stylists','drews-barbershop-on-pershing','viva-307-barbershop'))}
-CATEGORY_COUNTS={'restaurants':86,'barbers':106}
+CATEGORY_COUNTS={'restaurants':87,'barbers':106}
 EXTENSIONS=frozenset(('.html','.css','.js','.svg','.png','.jpg','.jpeg','.webp','.ico','.ttf','.woff','.woff2','.webmanifest','.mp4'))
 BRAND_FILES=frozenset(('apple-touch-icon.png','favicon.ico','icon-192.png','icon-256.png','icon-512.png','mark.png','preview.jpg','wordmark.png'))
 # Explicit source MP4 set (not derived from an arbitrary supplied manifest).
