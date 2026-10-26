@@ -6,9 +6,9 @@
       "sha256": "78eda3ccf27b841be2b5c0a14380dc705200768f60c84f305127e4f6da28f726"
     },
     {
-      "bytes": 4657244,
+      "bytes": 4897463,
       "path": "site-02.zip",
-      "sha256": "a0d935aae4745fb7070ca2b3744be1fc8d22b65635519997b4c6440616ee3c96"
+      "sha256": "16e74bf8eae6bbea92c452fc6a5eb7f5702835a1a929986864ad6533cfd7dc6b"
     }
   ],
   "files": [
@@ -68,15 +68,15 @@
     },
     {
       "archive": "site-02.zip",
-      "bytes": 659,
+      "bytes": 1899,
       "path": "assets/dons-logo-presentation.css",
-      "sha256": "3124db6725ce662897f0c0e1f10e994a0c9e2d9ef10379a0fdfef377ffc4050e"
+      "sha256": "f5c8ac294930b36c6470145a0324c25bff2884248d79e25651a1645e0b097f6d"
     },
     {
       "archive": "site-02.zip",
-      "bytes": 1880,
+      "bytes": 85,
       "path": "assets/dons-logo-presentation.js",
-      "sha256": "6e4b2b92620a42611e754a4c4d04f9b283fcb23b7d9f061992186393f55f820c"
+      "sha256": "74ebdf7d2bfb0e8353485c1dfec194daf8220e0b429983c4d2309aa2563c1dba"
     },
     {
       "archive": "site-02.zip",
@@ -92,9 +92,9 @@
     },
     {
       "archive": "site-02.zip",
-      "bytes": 491,
+      "bytes": 2003,
       "path": "assets/open-now.js",
-      "sha256": "497d9714e5bfb781edc94bc1a28e96fa248860186e7aa238e1585e9efb680a89"
+      "sha256": "c754a75c318d7b73deb02a1612dcd1ec4703d3330ed04bb00a762354361bb21f"
     },
     {
       "archive": "site-02.zip",
@@ -131,6 +131,12 @@
       "bytes": 7649,
       "path": "assets/shop/apple-touch-icon.png",
       "sha256": "a157d6e7298476c05a8eda4ac23b4bac5087fb6491ff1fcc9c9166d925113da3"
+    },
+    {
+      "archive": "site-02.zip",
+      "bytes": 82418,
+      "path": "assets/shop/crest-clean.svg",
+      "sha256": "a47804c0a1da8c969170232a601a8b652782f642f016005774f29944c68b0066"
     },
     {
       "archive": "site-02.zip",
@@ -215,6 +221,12 @@
       "bytes": 475565,
       "path": "assets/shop/touch.jpg",
       "sha256": "df75fa9378a83995720575f45f735971bd8607852a14def59859a3541d181ab5"
+    },
+    {
+      "archive": "site-02.zip",
+      "bytes": 286439,
+      "path": "assets/shop/wordmark-clean.svg",
+      "sha256": "97762e6466fcf9b702efebf3a6fc5c946f1e345fb0111a2a7b980335665570af"
     },
     {
       "archive": "site-02.zip",
@@ -314,9 +326,9 @@
     },
     {
       "archive": "site-02.zip",
-      "bytes": 97296,
+      "bytes": 98136,
       "path": "index.html",
-      "sha256": "d76927594d7fc7035bf1a7a51d50cdbe61fccdc051c6767c88d33aba3629469d"
+      "sha256": "79e7822913bbb7639543e5a4ae428fc561f99742b5d167334df4356b597a911e"
     },
     {
       "archive": "site-02.zip",

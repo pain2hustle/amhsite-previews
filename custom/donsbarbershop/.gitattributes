@@ -1,0 +1,2 @@
+# The offline builder pins the exact manifest bytes on every platform.
+release-manifest.json -text

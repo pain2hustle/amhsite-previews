@@ -3,7 +3,7 @@
 from pathlib import Path, PurePosixPath
 import hashlib,json,zipfile,tempfile,shutil,stat
 
-PINNED_MANIFEST_SHA256 = "db0f17ffc3eeabd6979534c715371abaa6efd001f38f4bd8ac38bd9b2cb85b42"
+PINNED_MANIFEST_SHA256 = "2e8284d84ff19f196f3f194a4d4dd23c69b40c73278b60793b911b02ed3a10ee"
 ROOT=Path(__file__).resolve().parent
 OUT=ROOT/"_site"
 def require(test,message):
