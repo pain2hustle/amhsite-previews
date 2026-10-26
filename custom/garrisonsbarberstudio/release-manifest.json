@@ -1,0 +1,361 @@
+{
+  "archives": [
+    {
+      "bytes": 7169694,
+      "path": "site-01.zip",
+      "sha256": "908471543567a1e1d415bbb137ddec48efdf3f34fba3e5535a5f4ba455cc6375"
+    },
+    {
+      "bytes": 6136248,
+      "path": "site-02.zip",
+      "sha256": "82dc54d4511bceb52c9b6d6df5bab69309757ea344086cda188c29a505a1afca"
+    },
+    {
+      "bytes": 545239,
+      "path": "site-03.zip",
+      "sha256": "8a5a6907083d0184d9ac01444f4202b6d6c65e74b84f2def7460a5ac87398ed6"
+    }
+  ],
+  "files": [
+    {
+      "archive": "site-03.zip",
+      "bytes": 214,
+      "path": "_headers",
+      "sha256": "25fc37007228e47c4fe824a4f3326b9a5030c727a5587553a1faf39d18b1dcf5"
+    },
+    {
+      "archive": "site-03.zip",
+      "bytes": 46124,
+      "path": "assets/1018a08a8623d9e87862286a508229ac1dff4138.ttf",
+      "sha256": "2c6b1ff0d368efb73636700b69dbef707fa5602a06d085a4e91e5125082651f0"
+    },
+    {
+      "archive": "site-03.zip",
+      "bytes": 46116,
+      "path": "assets/1204104cdc410b7c688e1e6311563da365aea693.ttf",
+      "sha256": "5150b3609eeaaa9c6d7e093cb9b16ab8ec2f7110ddf0cbe751887e6f158398af"
+    },
+    {
+      "archive": "site-02.zip",
+      "bytes": 324820,
+      "path": "assets/399a6e0c3f49ee302979e0e1679817123c942a0f.ttf",
+      "sha256": "1b08e7fc267a5c7e1d614100f604b83e7e8a0be241f0f288faa2b3ac93a683ba"
+    },
+    {
+      "archive": "site-02.zip",
+      "bytes": 87556,
+      "path": "assets/3c02197f251ce8d88712c85473eaf40a760704dc.ttf",
+      "sha256": "73bc9e17231e9073780d3c81574c7253cecd5645c93544df1a935054b39a364f"
+    },
+    {
+      "archive": "site-02.zip",
+      "bytes": 327260,
+      "path": "assets/5b8b67110adf942c14c1aaa0b10bfcc9c9e2c33e.ttf",
+      "sha256": "5b717029a2c4cfca2167e97be1157edb24151591e5ec96eb484745c392817a7a"
+    },
+    {
+      "archive": "site-02.zip",
+      "bytes": 326048,
+      "path": "assets/67fda287e7f8206a3534a244a88a5f0e1769cb44.ttf",
+      "sha256": "e7a1aaf7eda9f2fad4131725fa556265ec75ca7b2d756260173a040363e8d4f7"
+    },
+    {
+      "archive": "site-03.zip",
+      "bytes": 87120,
+      "path": "assets/7710411b1308d53acbf3bfa2cc6efb8e103667cc.ttf",
+      "sha256": "7dde307fa887fc65ff5830cfada77a7decc5dae8d3c816c9d39ba3f1af1c4ed7"
+    },
+    {
+      "archive": "site-02.zip",
+      "bytes": 327324,
+      "path": "assets/8a9a1bcb9e098e00ecc5c041037f74ed209a4bf6.ttf",
+      "sha256": "eec66af7f2337bd34fe6e801cf92ededcb57a20c0d7bc40a61d4eefcbe3dd40c"
+    },
+    {
+      "archive": "site-02.zip",
+      "bytes": 326468,
+      "path": "assets/9c2f47d4aba1db10139c5ce707943a0aa3e05c19.ttf",
+      "sha256": "b37284b5701b6b168dfc770aa1a4ac492106422fd3ba76bc7641e37434e8019c"
+    },
+    {
+      "archive": "site-03.zip",
+      "bytes": 86636,
+      "path": "assets/a7a1fa958ac0a35a7ace3c03bbe935363d35e05c.ttf",
+      "sha256": "0d85af813fc3ed87db0c6265515689b2eef5cbaf7aab17922528dfc95a2cd73f"
+    },
+    {
+      "archive": "site-03.zip",
+      "bytes": 4859,
+      "path": "assets/amh-ufo-logo.svg",
+      "sha256": "522861913205e10eeee6f03324b700b65d6f80a88e5ec37458f91e255bad549c"
+    },
+    {
+      "archive": "site-03.zip",
+      "bytes": 3972,
+      "path": "assets/business/booksy.svg",
+      "sha256": "72ec46bfa955b39b28cdf7b2afa93a51b353183ad92b663b30b456360d0fbf24"
+    },
+    {
+      "archive": "site-01.zip",
+      "bytes": 1648957,
+      "path": "assets/business/logo.png",
+      "sha256": "c8f35d184f554f75be633482c57fc4fd868786791efbf8d71b3aff2af8f6b6e8"
+    },
+    {
+      "archive": "site-03.zip",
+      "bytes": 87451,
+      "path": "assets/business/shop.jpg",
+      "sha256": "2899b8dec17c8cf7a71332c8e139c70c15b97de4bb022e10554c7ac0f3ce3a3e"
+    },
+    {
+      "archive": "site-03.zip",
+      "bytes": 35949,
+      "path": "assets/business/staff-garrison.jpg",
+      "sha256": "2c5ca81ee92bd6e91c022ec56671ce8e6fa0f1d4c812a2879a723c6705891941"
+    },
+    {
+      "archive": "site-02.zip",
+      "bytes": 216427,
+      "path": "assets/business/work-1.jpg",
+      "sha256": "dde0d55083afedbf44f709369cb4a5a5fad5ebc91d5d35df152bd24167a43d2a"
+    },
+    {
+      "archive": "site-03.zip",
+      "bytes": 79583,
+      "path": "assets/business/work-2.jpg",
+      "sha256": "2fd69a00c405c1d21af73b9bca6c17a6ff638f8ec2a33bcf98ecd1066d9aa015"
+    },
+    {
+      "archive": "site-03.zip",
+      "bytes": 87523,
+      "path": "assets/business/work-3.jpg",
+      "sha256": "e60df380be323d54032e70466ddbed609cdc0c9a73137ab0516b696349c1d063"
+    },
+    {
+      "archive": "site-02.zip",
+      "bytes": 105012,
+      "path": "assets/business/work-4.jpg",
+      "sha256": "0e42425c04d205e04ce48bbe93867ac74d84b07efef1fd8913a282ea4b70c3c9"
+    },
+    {
+      "archive": "site-02.zip",
+      "bytes": 115586,
+      "path": "assets/business/work-5.jpg",
+      "sha256": "526a029db440b983f22d12de41b9bd47e76ed47caddcd9527cc4b2177fe0e973"
+    },
+    {
+      "archive": "site-02.zip",
+      "bytes": 130324,
+      "path": "assets/c5cbbbc3cb5a4d95d801d6b416441b725029967e.ttf",
+      "sha256": "fd9301f2837c99df2be07cc7f0be66e9470f5354d8fcf1606027c67fcd637a53"
+    },
+    {
+      "archive": "site-02.zip",
+      "bytes": 133464,
+      "path": "assets/clip-cut.webp",
+      "sha256": "d92d2fbd12f36eb8b2cfe98688eeb414a3ff797eefae7a6126952dca8888dddb"
+    },
+    {
+      "archive": "site-03.zip",
+      "bytes": 42066,
+      "path": "assets/clip-gold-hd.webp",
+      "sha256": "36d0436e24c9aa0e59b548994d8d13c7d69189406f48ecb923869594040c6e9b"
+    },
+    {
+      "archive": "site-02.zip",
+      "bytes": 118999,
+      "path": "assets/clip-gold.png",
+      "sha256": "90c2def098c872a7423dab14a989e548274a4f3f4d6a89717a2835dcf65d2fb7"
+    },
+    {
+      "archive": "site-03.zip",
+      "bytes": 40322,
+      "path": "assets/clip-teeth-hd.webp",
+      "sha256": "ec6281d56741b8efba296526a461d718b97b087c5744b7968558612ff95f17bb"
+    },
+    {
+      "archive": "site-02.zip",
+      "bytes": 135239,
+      "path": "assets/clip-teeth.png",
+      "sha256": "ea0151fac186107b2c75728aa01bb0963f18d5c4855e54fb20c17fe848975b34"
+    },
+    {
+      "archive": "site-03.zip",
+      "bytes": 46048,
+      "path": "assets/df2f5acde9c147623277552434f9abcbc6c865a7.ttf",
+      "sha256": "bd933cb739b5125a1fda907d61ea237beadb4ac382ac7a5f9af0a8bbedaf48b7"
+    },
+    {
+      "archive": "site-03.zip",
+      "bytes": 2220,
+      "path": "assets/fonts.css",
+      "sha256": "e9f6c96b1769ade419c2d8d79513605a9538ba8d026cc0643b520c6a01e593a3"
+    },
+    {
+      "archive": "site-03.zip",
+      "bytes": 3251,
+      "path": "assets/garrison-gallery.js",
+      "sha256": "bc72df8b2050aef174487434df94a114140f5ec4e9d97b8ee8a32ad41e585e84"
+    },
+    {
+      "archive": "site-03.zip",
+      "bytes": 567,
+      "path": "assets/hero-readability.css",
+      "sha256": "cdbc52b5162c15c590f010fae7de1fc88ef3f057faec0937c5b8b9660292099a"
+    },
+    {
+      "archive": "site-02.zip",
+      "bytes": 278560,
+      "path": "assets/leather-hd.jpg",
+      "sha256": "b45b030ce3947537c2243977bdec25813415cc2db32061834111f5af91547e1d"
+    },
+    {
+      "archive": "site-02.zip",
+      "bytes": 278560,
+      "path": "assets/leather.jpg",
+      "sha256": "b45b030ce3947537c2243977bdec25813415cc2db32061834111f5af91547e1d"
+    },
+    {
+      "archive": "site-03.zip",
+      "bytes": 493,
+      "path": "assets/phone-chrome.css",
+      "sha256": "a5633e9f56f18d352814c75e0000a1b40d94fb4fd13a2f135b21910723754b9c"
+    },
+    {
+      "archive": "site-03.zip",
+      "bytes": 1000,
+      "path": "assets/rl-extras.js",
+      "sha256": "98aaea715f001612471e5f1dee181f7091af94fb8f415500b763183b82a7b029"
+    },
+    {
+      "archive": "site-02.zip",
+      "bytes": 393854,
+      "path": "assets/shear-a.png",
+      "sha256": "6347bd4988bb26339f8420df348b19cf33290d27d4d3db1803974831f6762ed8"
+    },
+    {
+      "archive": "site-02.zip",
+      "bytes": 394477,
+      "path": "assets/shear-b.png",
+      "sha256": "1db505cfcc94e36eabd791763bb32d0893a939a608c1a39d8e22a17a298ea23a"
+    },
+    {
+      "archive": "site-02.zip",
+      "bytes": 373752,
+      "path": "assets/shear-pivot.png",
+      "sha256": "9786ac3d271af70ce8d61381e0c54173186ccaa0e398c01c49dd10eaaf45770c"
+    },
+    {
+      "archive": "site-03.zip",
+      "bytes": 1905,
+      "path": "assets/spec-completion-v3.css",
+      "sha256": "4f94b80c7413e52898df8007baeec0fd67fba814033bbe924527307ed3770222"
+    },
+    {
+      "archive": "site-03.zip",
+      "bytes": 625,
+      "path": "assets/tool-shine-clean.css",
+      "sha256": "b3ac6d7823e4805f218dee26638a21fcb8383d24f4001a4ba72c4e67057dd8d3"
+    },
+    {
+      "archive": "site-02.zip",
+      "bytes": 575694,
+      "path": "film/clipper.jpg",
+      "sha256": "b5bd45f81159e76822210125f4e84ca45167cd97bd03f0ad1f24528943786b7f"
+    },
+    {
+      "archive": "site-01.zip",
+      "bytes": 1960401,
+      "path": "film/clipper.mp4",
+      "sha256": "26a8e7e00bec5499f17b38ba50dd88ace06e7f5bb0b0b238a79758da368437e0"
+    },
+    {
+      "archive": "site-02.zip",
+      "bytes": 344909,
+      "path": "film/door.jpg",
+      "sha256": "bc079ef384acca1c80aeb951fb144e3ce62dcf3e001792dd91b151198c02c40e"
+    },
+    {
+      "archive": "site-01.zip",
+      "bytes": 1406287,
+      "path": "film/door.mp4",
+      "sha256": "7cc6598e5c43c74443264fbde8a524c8c62760f3ce45e91460fce7a9526f8546"
+    },
+    {
+      "archive": "site-02.zip",
+      "bytes": 462052,
+      "path": "film/fade.jpg",
+      "sha256": "e86a8431012cfae9af75a7664be16fb7b1b1096738772729d2d0bc39606482c2"
+    },
+    {
+      "archive": "site-03.zip",
+      "bytes": 4772,
+      "path": "film/film.css",
+      "sha256": "99500313fc3b7defb116d989d1520ba7b83fe4a77cabdad5ef378479f1fa9678"
+    },
+    {
+      "archive": "site-03.zip",
+      "bytes": 4482,
+      "path": "film/film.js",
+      "sha256": "04772f4e58b525b1bb2e471b632f69b8d840a2e7510756f85083e72a236d0faf"
+    },
+    {
+      "archive": "site-02.zip",
+      "bytes": 473858,
+      "path": "film/service.jpg",
+      "sha256": "e4ad2490e506dfeb10dacb5a6679bdbd31eaeeccae461efdea1cf9c197568649"
+    },
+    {
+      "archive": "site-01.zip",
+      "bytes": 1104222,
+      "path": "film/service.mp4",
+      "sha256": "0acf5959ba6219f3e9c8782db180fc831837f8a0dbe0c202341a670b26c71582"
+    },
+    {
+      "archive": "site-02.zip",
+      "bytes": 523859,
+      "path": "film/tools-metal-polished-1080.jpg",
+      "sha256": "ab95a534e9ab1443f0d1befa52e6155cbca648a0a3ba117301d9997bf5dbaeee"
+    },
+    {
+      "archive": "site-02.zip",
+      "bytes": 440197,
+      "path": "film/wrap.jpg",
+      "sha256": "ff6bc160648cab45804bb5d0c6a7f757cb6849b8ce15472057e407e1e94c6c10"
+    },
+    {
+      "archive": "site-01.zip",
+      "bytes": 1088771,
+      "path": "film/wrap.mp4",
+      "sha256": "7c15b8aaac6a299db4c536a5881d4c0a3a93fa6f21633abd2dca507112e24345"
+    },
+    {
+      "archive": "site-02.zip",
+      "bytes": 98770,
+      "path": "index.html",
+      "sha256": "40dcf407994005ea122e790ccb8123a29432fa8292681bf5e33e735637e7b4be"
+    },
+    {
+      "archive": "site-03.zip",
+      "bytes": 84,
+      "path": "robots.txt",
+      "sha256": "038c2581ebf8044dc65fb292b20a8385eb78aac3f801e303255b49307df7634a"
+    },
+    {
+      "archive": "site-03.zip",
+      "bytes": 310,
+      "path": "site.webmanifest",
+      "sha256": "baf32524f14e72db3e5edec0f7c0d09a13c4cfe6c227f3631b5fc6300b670cf0"
+    },
+    {
+      "archive": "site-03.zip",
+      "bytes": 171,
+      "path": "sitemap.xml",
+      "sha256": "0ad69481c6888da2b443e406d44cf3423ce183cb9dff8cb05f843310facc20ef"
+    }
+  ],
+  "origin": "https://garrisonsbarberstudio.pages.dev",
+  "output": "_site",
+  "schema": 1,
+  "site": "garrisonsbarberstudio"
+}
