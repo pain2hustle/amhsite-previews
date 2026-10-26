@@ -6,9 +6,9 @@
       "sha256": "78eda3ccf27b841be2b5c0a14380dc705200768f60c84f305127e4f6da28f726"
     },
     {
-      "bytes": 4897472,
+      "bytes": 4897569,
       "path": "site-02.zip",
-      "sha256": "f5be277a76579a7ca21d79f13f7fedf5cd0391073e7059df52f6b310c56e6e9a"
+      "sha256": "54698efa962a4537b584304fa3a3d68ff1195e3a0fd93e5d1d39e779bdc18bf2"
     }
   ],
   "files": [
@@ -80,9 +80,9 @@
     },
     {
       "archive": "site-02.zip",
-      "bytes": 567,
+      "bytes": 1615,
       "path": "assets/hero-readability.css",
-      "sha256": "cdbc52b5162c15c590f010fae7de1fc88ef3f057faec0937c5b8b9660292099a"
+      "sha256": "c72c15e778d04cf986422e287cbb36332e2fdf116e5d151e85d418fcb4295f3c"
     },
     {
       "archive": "site-02.zip",
@@ -326,9 +326,9 @@
     },
     {
       "archive": "site-02.zip",
-      "bytes": 98136,
+      "bytes": 96324,
       "path": "index.html",
-      "sha256": "79e7822913bbb7639543e5a4ae428fc561f99742b5d167334df4356b597a911e"
+      "sha256": "04829116df305cb852a42b98ae898d4c5f790e0741f6659937d571986ba3c675"
     },
     {
       "archive": "site-02.zip",
