@@ -1,0 +1,12 @@
+{
+  "name": "amhsite",
+  "main": "worker.js",
+  "compatibility_date": "2026-10-25",
+  "assets": {
+    "directory": "../_site",
+    "binding": "ASSETS",
+    "run_worker_first": ["/*", "!/assets/*", "!/*/assets/*", "!/*.ico", "!/*/*.ico", "!/*/*/*.ico", "!/*.js", "!/*/*.js", "!/*/*/*.js", "!/robots.txt"]
+  },
+  "workers_dev": true,
+  "preview_urls": false
+}
